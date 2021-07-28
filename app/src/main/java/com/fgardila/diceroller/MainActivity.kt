@@ -2,6 +2,7 @@ package com.fgardila.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.fgardila.diceroller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        binding.rollButton.text = "Let's Roll"
+        binding.rollButton.setOnClickListener {
+            Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
